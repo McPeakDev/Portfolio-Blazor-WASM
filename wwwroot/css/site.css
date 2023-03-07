@@ -1,0 +1,51 @@
+
+html {
+    overflow: hidden;
+}
+
+#app {
+    height: 100vh;
+}
+
+.mud-main-content, .mud-main-content > *, .full-height{
+    height: 100%;
+}
+
+.large-icon > * > svg {
+    font-size: 2rem;
+}
+
+.rounded > a {
+    border-radius: 12px !important;
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+img.rounded, div.rounded {
+    border-radius: 50px !important;
+
+}
+
+.small-paragraph {
+    margin-top: 20px;
+    width: 600px;
+}
+
+.flex-align-center {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+}
+.flex-align-between {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+
+}
+
+.text-center {
+    text-align: center;
+}

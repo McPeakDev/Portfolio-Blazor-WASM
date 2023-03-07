@@ -1,0 +1,60 @@
+﻿@page "/about"
+
+<PageTitle>McPeakDev - About</PageTitle>
+
+
+<div class="d-flex flex-align-center full-height">
+    <div class="ma-6 text-center">
+        <MudImage Style="background-color: rgb(0,43,78);" ObjectFit="ObjectFit.Cover" Height="400" Width="400" Src="https://avatars.githubusercontent.com/u/35775195?v=4" Elevation="25" Class="rounded"/>
+        <MudText Typo="Typo.h6" GutterBottom="true" >Full-Stack Developer</MudText>
+
+        <MudText Class="bold animate__animated animate__delay-1s animate__pulse" Typo="Typo.h4" GutterBottom="true" Color="Color.Primary">
+           Matthew McPeak
+        </MudText>
+    </div>
+    <div class="small-paragraph ma-10">
+        <MudText Typo="Typo.h4" GutterBottom="true" Color="Color.Primary" Class="animate__animated animate__delay-1s animate__pulse">About the Developer</MudText>
+
+        <MudText Typo="Typo.subtitle1" GutterBottom="true">
+            Hi, my name is Matthew McPeak and I'm a software developer who enjoys taking on 
+            tough and exciting tasks. I am a team player and will get to the root of any and every issue. 
+            I got into software development when I was around 15, by playing around with Minecraft mods
+            and I was always tinkering on them. When I got to college, I was finally able to create things 
+            that can be found on my <span class="link" @click="$router.push('/projects')">projects page</span>. 
+            Fast-forward to now, I am creating and maintaining payment systems on several websites and kiosks in the state of TN and NC.
+        </MudText>
+        <div class="d-flex flex-align-between">
+            <div>
+                <MudList Clickable="true">
+                    <MudListItem Icon="@Icons.Material.Filled.Timeline" IconColor="Color.Primary" Text='@($"{Age} years old")'/>
+                    <MudListItem Icon="@Icons.Material.Filled.LocationOn" IconColor="Color.Primary" Text="Kingsport, TN" />
+                    <MudListItem Icon="@Icons.Custom.Brands.GitHub" IconColor="Color.Primary" Href="https://github.com/McPeakDev" Text="McPeakDev" />
+                </MudList>
+            </div>
+            <div>
+                <MudList Clickable="true">
+                    <MudListItem Icon="@Icons.Material.Filled.Email" IconColor="Color.Primary" Text="m.mcpeakcs@gmail.com"/>
+                    <MudListItem Icon="@Icons.Material.Filled.Phone" IconColor="Color.Primary" Text="(423) 946-7239" />
+                    <MudListItem Icon="@Icons.Custom.Brands.LinkedIn" IconColor="Color.Primary" Href="https://www.linkedin.com/in/matthew-mcpeak-19539b137/" Text="Matthew McPeak" />
+                </MudList>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@code {
+    private int Age = 0;
+
+    protected override void OnInitialized() {
+        DateTime zeroTime = new DateTime(1, 1, 1);
+
+        DateTime a = new DateTime(1998, 08, 12);
+        DateTime b = DateTime.Today;
+
+        TimeSpan span = b - a;
+        Age = (zeroTime + span).Year - 1;
+    }
+}

@@ -1,0 +1,26 @@
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <LayoutView Layout="@typeof(MainLayout)">
+            <TransitionableRoutePrimary RouteData="@routeData" ForgetStateOnTransition="true">
+                <TransitionableRouteView DefaultLayout="@typeof(Transitionable)" />
+            </TransitionableRoutePrimary>
+            <TransitionableRouteSecondary RouteData="@routeData" ForgetStateOnTransition="true">
+                <TransitionableRouteView DefaultLayout="@typeof(Transitionable)" />
+            </TransitionableRouteSecondary>
+        </LayoutView>
+    </Found>
+    <NotFound>
+        <PageTitle>McPeakDev - Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <div class="d-flex flex-align-center full-height">
+                <div>
+                    <MudText Typo="Typo.h3" GutterBottom="true" Class="animate__animated animate__pulse animate__infinite">Hmmm, it looks like we can't find that page.</MudText>
+                    <MudText Typo="Typo.subtitle1" >
+                        Please try again later or go back to the
+                        <MudLink Href="./" Underline="Underline.Always" Typo="Typo.subtitle1">homepage</MudLink>.
+                    </MudText>
+                </div>
+            </div>
+        </LayoutView>
+    </NotFound>
+</Router>

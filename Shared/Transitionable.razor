@@ -1,0 +1,28 @@
+@inherits TransitionableLayoutComponent
+
+<div style="width: calc(100vw - 64px);" class="transition full-height  @transitioningClass @(Transition.IntoView ? "transitioned" : "transitioned_behind")">
+    @Body
+</div>
+
+<style>
+    .transition {
+        position: absolute;
+    }
+    .transitioned {
+        z-index: 1;
+    }
+    .transitioned_behind {
+        z-index: 0;
+    }
+</style>
+
+@code {
+    private string transitioningClass => Transition.FirstRender
+        ? "" : $"animate__{transitioningEffect()} animate__faster animate__animated";
+
+    private string transitioningEffect() {
+        var effect = Transition.IntoView ? "zoomIn" : "zoomOut";
+        return effect ;
+    }
+
+} 

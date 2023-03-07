@@ -1,0 +1,82 @@
+@page "/work"
+
+<PageTitle>McPeakDev - Work History</PageTitle>
+
+
+<div class="d-flex flex-align-center full-height">
+    <MudCarousel Class="mud-width-full my-auto" Style="height:650px;" ShowArrows="false" ShowBullets="true" EnableSwipeGesture="false" AutoCycle="true" AutoCycleTime="@(new TimeSpan(0,0, 10))" TData="object">
+        <MudCarouselItem Transition="MudBlazor.Transition.Fade" Class="d-flex flex-align-center">
+            <MudCard Elevation="25" Class="rounded pa-4 mx-auto" style="max-width: 850px">
+                <MudCardContent Class="flex-align-center">
+                    <div class="d-flex flex-align-between">
+                        <MudText Typo="Typo.h5" Class="animate__animated animate__delay-1s animate__pulse" Color="Color.Primary">Software Developer I</MudText>
+                        <MudText Typo="Typo.h6" Class="animate__animated animate__delay-1s animate__pulse">Business Information Systems</MudText>
+                    </div>
+                    <div class="d-flex flex-align-between">
+                        <MudText Class="bold pt-1" Typo="Typo.h6">June 2020 - Present</MudText>
+                        <div>
+                            <MudTooltip 
+                                Text="Job Type" 
+                                Arrow="true" 
+                                Placement="Placement.Left"
+                            >
+                                <MudChip Color="Color.Primary" Variant="Variant.Text" Label="true" Icon="@Icons.Material.Filled.AccessTime" style="margin-left: 0px;">Full-Time</MudChip>
+                            </MudTooltip>
+                            <MudTooltip 
+                                Text="Location" 
+                                Arrow="true" 
+                                Placement="Placement.Right"
+                            >
+                                <MudChip Color="Color.Primary" Variant="Variant.Text" Label="true" Icon="@Icons.Material.Filled.LocationOn" style="margin-left: 0px;">Remote</MudChip>
+                            </MudTooltip>
+                        </div>
+                    </div>
+                    <MudDivider class="mt-4"/>
+                    <MudList Clickable="true">
+                        <MudListItem Icon="@Icons.Material.Filled.ArrowRight" IconColor="Color.Primary" Text='Developed a highly robust and scale-able software solution that interfaces with local government systems and payment devices.'/>
+                        <MudListItem Icon="@Icons.Material.Filled.ArrowRight" IconColor="Color.Primary" Text="Designed and developed a mobile application that provides many benefits to veterans in Nashville, TN." />
+                        <MudListItem Icon="@Icons.Material.Filled.ArrowRight" IconColor="Color.Primary" Text="Designed and developed a single-sign-on (SSO) application that interfaces with several different company projects" />
+                        <MudListItem Icon="@Icons.Material.Filled.ArrowRight" IconColor="Color.Primary" Text="Continually enforces and updates company code quality and documentation policy during peer code reviews" />
+                        <MudListItem Icon="@Icons.Material.Filled.ArrowRight" IconColor="Color.Primary" Text="Provides time estimates on projects based on complexity and developer skills for myself and other peers." />
+
+                    </MudList>
+                </MudCardContent>
+            </MudCard>
+        </MudCarouselItem>
+        <MudCarouselItem Transition="MudBlazor.Transition.Fade" Class="d-flex flex-align-center">
+            <MudCard Elevation="25" Class="rounded pa-4 mx-auto my-auto" style="max-width: 850px">
+                <MudCardContent>
+                    <div class="d-flex flex-align-between">
+                        <MudText Typo="Typo.h5" Class="animate__animated animate__delay-1s animate__pulse" Color="Color.Primary">IT Intern</MudText>
+                        <MudText Typo="Typo.h6" Class="animate__animated animate__delay-1s animate__pulse">Good Samaritan Minstries</MudText>
+                    </div>
+                    <div class="d-flex flex-align-between">
+                        <MudText Class="bold pt-1" Typo="Typo.h6">February 2020 - May 2020</MudText>
+                        <div>
+                            <MudTooltip 
+                                Text="Job Type" 
+                                Arrow="true" 
+                                Placement="Placement.Left"
+                            >
+                                <MudChip Color="Color.Primary" Variant="Variant.Text" Label="true" Icon="@Icons.Material.Filled.AccessTime" style="margin-left: 0px;">Intern</MudChip>
+                            </MudTooltip>
+                            <MudTooltip 
+                                Text="Location" 
+                                Arrow="true" 
+                                Placement="Placement.Right"
+                            >
+                                <MudChip Color="Color.Primary" Variant="Variant.Text" Label="true" Icon="@Icons.Material.Filled.LocationOn" style="margin-left: 0px;">On-Site</MudChip>
+                            </MudTooltip>
+                        </div>
+                    </div>
+                    <MudDivider class="mt-4"/>
+                    <MudList Clickable="true">
+                        <MudListItem Icon="@Icons.Material.Filled.ArrowRight" IconColor="Color.Primary" Text='Developed and rolled out a new backup solution to all domain users.'/>
+                        <MudListItem Icon="@Icons.Material.Filled.ArrowRight" IconColor="Color.Primary" Text="Implemented and enforced a new password keeping solution" />
+                        <MudListItem Icon="@Icons.Material.Filled.ArrowRight" IconColor="Color.Primary" Text="Helped several users on the daily by troubleshooting, diagnosing, and fixing issues on their machines." />
+                    </MudList>
+                </MudCardContent>
+            </MudCard>
+        </MudCarouselItem>
+    </MudCarousel>
+</div>

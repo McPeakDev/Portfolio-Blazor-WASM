@@ -1,0 +1,127 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider 
+    Theme="MyCustomTheme"  
+/>
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <div class="d-none d-sm-flex full-height">
+        <div class="d-flex flex-align-center full-height" style="width: 100%;">
+            <MudAppBar Elevation="0">
+                <MudSpacer />
+                <MudText Typo="Typo.h5"  Class="animate__animated animate__delay-2s animate__lightSpeedInRight" Color="Color.Primary">McPeakDev</MudText>
+            </MudAppBar>
+            <MudDrawer Variant="@DrawerVariant.Mini" Elevation="0" Class="animate__animated animate__delay-1s animate__slideInLeft"> 
+                <MudSpacer />
+                <MudNavMenu 
+                    Color="Color.Primary"
+                    Rounded="true"
+                    Dense="true"
+                >
+                    <MudTooltip 
+                        Text="Home" 
+                        Arrow="true" 
+                        Placement="Placement.Right"
+                    >
+                        <MudNavLink 
+                            Class="large-icon mb-6 rounded"
+                            Href="" 
+                            Match="NavLinkMatch.All" 
+                            Icon="@Icons.Material.Filled.Home"
+                        ></MudNavLink>
+                    </MudTooltip>
+                    <MudTooltip 
+                        Text="About" 
+                        Arrow="true" 
+                        Placement="Placement.Right"
+                    >
+                        <MudNavLink 
+                            Class="large-icon mb-6 rounded"
+                            Href="/about" 
+                            Match="NavLinkMatch.All" 
+                            Icon="@Icons.Material.Filled.Person"
+                        ></MudNavLink>
+                    </MudTooltip>
+                    <MudTooltip 
+                        Text="Work" 
+                        Arrow="true" 
+                        Placement="Placement.Right"
+                    >
+                        <MudNavLink 
+                            Class="large-icon mb-6 rounded"
+                            Href="/work" 
+                            Match="NavLinkMatch.All" 
+                            Icon="@Icons.Material.Filled.Work"
+                        ></MudNavLink>
+                    </MudTooltip>
+                    <MudTooltip 
+                        Text="Projects" 
+                        Arrow="true" 
+                        Placement="Placement.Right"
+                    >
+                        <MudNavLink 
+                            Class="large-icon mb-6 rounded"
+                            Href="/projects" 
+                            Match="NavLinkMatch.All" 
+                            Icon="@Icons.Material.Filled.Monitor"
+                        ></MudNavLink>
+                    </MudTooltip>
+                </MudNavMenu>
+                <MudSpacer />
+            </MudDrawer>
+            <MudMainContent>
+                <div
+                    class="full-height animate__animated animate__delay-3s animate__zoomIn"
+                    Style="width: calc(100vw - 64px);"
+                >
+                    @Body
+                </div>
+            </MudMainContent>
+        </div>
+    </div>
+    <div class="d-flex d-sm-none">
+        <div class="d-flex flex-align-center" style="height: 100vh; width: 100%;">
+            <div class="text-center my-auto">
+                <MudText Typo="Typo.h6" Color="Color.Primary" Class="animate__animated animate__slower animate__pulse animate__infinite">
+                   This site is not available on mobile.
+                </MudText>
+                <MudText Typo="Typo.subtitle1">
+                   Please visit this site on tablet or desktop.
+                </MudText>
+            </div>
+        </div>
+    </div>
+</MudLayout>
+
+@code {
+    private static MudBlazor.Utilities.MudColor _primary = new MudBlazor.Utilities.MudColor("rgb(150,216,216)");
+    private static MudBlazor.Utilities.MudColor _background = new MudBlazor.Utilities.MudColor("rgb(0,20,37)");
+
+    MudTheme MyCustomTheme = new MudTheme() {
+        Palette = new Palette() {
+            Primary = _primary,
+            AppbarBackground = _background,
+            Background = _background,
+            TextPrimary = Colors.Grey.Lighten5,
+            TextSecondary = _primary,
+            DrawerBackground = _background,
+            Info = Colors.Grey.Lighten5,
+            Surface = new MudBlazor.Utilities.MudColor("rgb(0,43,78)")
+        },
+
+        Typography = new Typography()
+        {
+            Default = new Default()
+            {
+                FontFamily = new[] { "Coda", "Roboto", "Arial", "sans-serif" }
+            }
+        },
+
+        LayoutProperties = new LayoutProperties() {
+            DrawerMiniWidthLeft = "65px",
+            DrawerMiniWidthRight = "65px"
+        }
+    };
+}
