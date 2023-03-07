@@ -15,7 +15,7 @@ public class Project {
 
     public string? language { get; set; } 
 
-    public DateTime updated_at { get; set; } 
+    public DateTime pushed_at { get; set; } 
 
     public string? description { get; set; }
 
