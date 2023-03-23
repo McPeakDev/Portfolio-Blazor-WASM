@@ -9,46 +9,48 @@
     } else {
         <MudCarousel Class="mud-width-full my-auto" Style="height:650px;" ShowArrows="false" ShowBullets="true" EnableSwipeGesture="false" TData="object">
             @foreach(var project in projects) {
-                <MudCarouselItem Transition="MudBlazor.Transition.Fade" Class="d-flex flex-align-center">
-                    <MudCard Elevation="25" Style="width: 850px;" Class="rounded pa-4 my-2">
-                        <MudCardContent>
-                            <div class="d-flex flex-align-between">
-                                <div class="d-flex flex-align-between" style="flex-direction: column;">
-                                    <MudText Typo="Typo.h5" Class="animate__animated animate__delay-1s animate__pulse">@project.name!.Replace("-", " ")</MudText>
-                                    <div>
-                                        <MudTooltip 
-                                            Text="Language" 
-                                            Arrow="true" 
-                                            Placement="Placement.Left"
-                                        >
-                                            <MudChip Color="Color.Primary" Variant="Variant.Text" Label="true" style="margin-left: 0px;">@project.language</MudChip>
-                                        </MudTooltip>
-                                        <MudTooltip 
-                                            Text="Last Update" 
-                                            Arrow="true" 
-                                            Placement="Placement.Right"
-                                        >
-                                            <MudChip Color="Color.Primary" Variant="Variant.Text" Icon="@Icons.Material.Filled.AccessTime" Label="true" style="margin-left: 0px;">@project.pushed_at.ToString("MMMM yyyy")</MudChip>
-                                        </MudTooltip>
+                @if(project.name != "McPeakDev") {
+                    <MudCarouselItem Transition="MudBlazor.Transition.Fade" Class="d-flex flex-align-center">
+                        <MudCard Elevation="25" Style="width: 850px;" Class="rounded pa-4 my-2">
+                            <MudCardContent>
+                                <div class="d-flex flex-align-between">
+                                    <div class="d-flex flex-align-between" style="flex-direction: column;">
+                                        <MudText Typo="Typo.h5" Class="animate__animated animate__delay-1s animate__pulse">@project.name!.Replace("-", " ")</MudText>
+                                        <div>
+                                            <MudTooltip 
+                                                Text="Language" 
+                                                Arrow="true" 
+                                                Placement="Placement.Left"
+                                            >
+                                                <MudChip Color="Color.Primary" Variant="Variant.Text" Label="true" style="margin-left: 0px;">@project.language</MudChip>
+                                            </MudTooltip>
+                                            <MudTooltip 
+                                                Text="Last Update" 
+                                                Arrow="true" 
+                                                Placement="Placement.Right"
+                                            >
+                                                <MudChip Color="Color.Primary" Variant="Variant.Text" Icon="@Icons.Material.Filled.AccessTime" Label="true" style="margin-left: 0px;">@project.pushed_at.ToString("MMMM yyyy")</MudChip>
+                                            </MudTooltip>
+                                        </div>
                                     </div>
+                                    <MudTooltip 
+                                        Text="Developer" 
+                                        Arrow="true" 
+                                        Placement="Placement.Left"
+                                    >
+                                        <MudAvatar Style="height:70px; width:70px; font-size:2rem; background-color: rgb(0,43,78);" Image="@project.owner!.avatar_url" />
+                                    </MudTooltip>
                                 </div>
-                                <MudTooltip 
-                                    Text="Developer" 
-                                    Arrow="true" 
-                                    Placement="Placement.Left"
-                                >
-                                    <MudAvatar Style="height:70px; width:70px; font-size:2rem; background-color: rgb(0,43,78);" Image="@project.owner!.avatar_url" />
-                                </MudTooltip>
-                            </div>
-                            <MudDivider class="my-4"/>
-                            <MudText Typo="Typo.subtitle1">@project.description</MudText>
-                        </MudCardContent>
-                        <MudCardActions>
-                            <MudSpacer />
-                            <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.OpenInNew" Color="Color.Primary" Class="mt-4" Href="@project.html_url" Target="_blank">View Repo</MudButton>
-                        </MudCardActions>
-                    </MudCard>
-                </MudCarouselItem>
+                                <MudDivider class="my-4"/>
+                                <MudText Typo="Typo.subtitle1">@project.description</MudText>
+                            </MudCardContent>
+                            <MudCardActions>
+                                <MudSpacer />
+                                <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.OpenInNew" Color="Color.Primary" Class="mt-4" Href="@project.html_url" Target="_blank">View Repo</MudButton>
+                            </MudCardActions>
+                        </MudCard>
+                    </MudCarouselItem>
+                }
             }
         </MudCarousel>
     }
